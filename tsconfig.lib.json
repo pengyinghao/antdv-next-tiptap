@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.app.json",
+  "include": ["typings/*.d.ts", "src/components/tiptap/**/*"],
+  "compilerOptions": {
+    "skipLibCheck": true
+  }
+}

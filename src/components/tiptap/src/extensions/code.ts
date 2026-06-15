@@ -1,0 +1,20 @@
+import Code from '@tiptap/extension-code'
+
+import type { TiptapPlugin } from './types'
+
+/**
+ * 行内代码功能扩展
+ * 提供单行代码格式化和工具栏按钮
+ */
+export const codePlugin: TiptapPlugin = {
+    name: 'code',
+    extensions: [Code],
+    toolbar: [
+        {
+            icon: 'ri:code-line',
+            title: '行内代码',
+            action: (editor) => editor.chain().focus().toggleCode().run(),
+            isActive: (editor) => editor.isActive('code')
+        }
+    ]
+}

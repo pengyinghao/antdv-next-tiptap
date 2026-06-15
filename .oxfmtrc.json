@@ -1,0 +1,34 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 100,
+  "tabWidth": 4,
+  "tabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "trailingComma": "none",
+  "arrowParens": "always",
+  "ignorePatterns": [
+    "/dist/*",
+    ".local",
+    ".output.js",
+    "/node_modules/**",
+    "**/*.svg",
+    "**/*.sh",
+    "/public/*",
+    "/scripts/*",
+    "/docker/*",
+    ".github"
+  ],
+  "sortImports": {
+    "groups": [
+      "type-import",
+      ["value-builtin", "value-external"],
+      "type-internal",
+      "value-internal",
+      ["type-parent", "type-sibling", "type-index"],
+      ["value-parent", "value-sibling", "value-index"],
+      "unknown"
+    ]
+  }
+}
