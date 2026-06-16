@@ -42,7 +42,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import AntdvNext from 'antdv-next'
 import AntdvNextTiptap from 'antdv-next-tiptap'
-import 'antdv-next-tiptap/style'
+import 'antdv-next-tiptap/index.css'
 
 const app = createApp(App)
 
@@ -62,7 +62,7 @@ app.mount('#app')
 
 <script setup>
 import { Tiptap } from 'antdv-next-tiptap'
-import 'antdv-next-tiptap/style'
+import 'antdv-next-tiptap/index.css'
 </script>
 ```
 
@@ -76,7 +76,7 @@ import 'antdv-next-tiptap/style'
 <script setup>
 import { ref } from 'vue'
 import { Tiptap } from 'antdv-next-tiptap'
-import 'antdv-next-tiptap/style'
+import 'antdv-next-tiptap/index.css'
 
 const content = ref('<h1>标题</h1><p>这个编辑器很棒！</p>')
 </script>
