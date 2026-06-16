@@ -39,6 +39,12 @@ const handleConfirm = () => {
     emit('confirm', { ...form, src: form.src.trim() })
     open.value = false
 }
+
+const handleAutoPlayChange = (value: boolean) => {
+    if (value) {
+        form.muted = true
+    }
+}
 </script>
 
 <template>
@@ -62,14 +68,7 @@ const handleConfirm = () => {
                 <a-switch v-model:checked="form.controls" />
             </a-form-item>
             <a-form-item label="自动播放">
-                <a-switch
-                    v-model:checked="form.autoplay"
-                    @change="
-                        (v) => {
-                            if (v) form.muted = true
-                        }
-                    "
-                />
+                <a-switch v-model:checked="form.autoplay" @change="handleAutoPlayChange" />
                 <span v-if="form.autoplay" class="tip">自动播放需同时开启静音</span>
             </a-form-item>
             <a-form-item label="静音播放">

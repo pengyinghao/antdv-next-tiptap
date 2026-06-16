@@ -11,7 +11,7 @@ export const horizontalRulePlugin: TiptapPlugin = {
     extensions: [HorizontalRule],
     toolbar: [
         {
-            icon: 'ix:separator-line',
+            icon: 'ri:separator',
             title: '分割线',
             action: (editor) => editor.chain().focus().setHorizontalRule().run()
         }

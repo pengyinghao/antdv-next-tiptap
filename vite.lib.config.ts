@@ -25,7 +25,7 @@ export default defineConfig({
             imports: ['vue']
         }),
         dts({
-            include: ['src/components/tiptap'],
+            include: ['typings/*.d.ts', 'src/components/tiptap'],
             outDirs: 'dist/types',
             tsconfigPath: './tsconfig.lib.json',
             strictOutput: false,
@@ -44,16 +44,15 @@ export default defineConfig({
         outDir: 'dist',
         lib: {
             entry: fileURLToPath(new URL('./src/components/tiptap/index.ts', import.meta.url)),
-            name: 'AntdvNextTiptap',
-            fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`
+            formats: ['es'],
+            fileName: () => 'index.mjs'
         },
         rollupOptions: {
+            checks: {
+                pluginTimings: false
+            },
             external: ['vue', 'antdv-next', /^@tiptap\//, /^@iconify/, /^ant-design-vue/],
             output: {
-                exports: 'named',
-                globals: {
-                    vue: 'Vue'
-                },
                 assetFileNames: 'index.[ext]'
             }
         },

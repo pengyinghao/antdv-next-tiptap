@@ -35,7 +35,11 @@ export default defineConfig({
         devSourcemap: true
     },
     build: {
+        minify: 'oxc',
         rollupOptions: {
+            checks: {
+                invalidAnnotation: false
+            },
             output: {
                 chunkFileNames: 'static/js/[name]-[hash].js',
                 entryFileNames: 'static/js/[name]-[hash].js',
