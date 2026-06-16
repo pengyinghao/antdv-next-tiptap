@@ -1,6 +1,6 @@
 {
   "name": "antdv-next-tiptap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
@@ -9,7 +9,7 @@
       "import": "./dist/index.mjs",
       "types": "./dist/types/index.d.ts"
     },
-    "./style": "./dist/index.css"
+    "./index.css": "./dist/index.css"
   },
   "files": [
     "dist"
