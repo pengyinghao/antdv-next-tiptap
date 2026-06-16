@@ -43,7 +43,7 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         lib: {
-            entry: fileURLToPath(new URL('./src/components/tiptap/index.ts', import.meta.url)),
+            entry: fileURLToPath(new URL('./src/components/index.ts', import.meta.url)),
             formats: ['es'],
             fileName: () => 'index.mjs'
         },
