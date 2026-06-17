@@ -1,4 +1,4 @@
-import { FontSize } from '@tiptap/extension-font-size'
+import { FontSize } from '@tiptap/extension-text-style'
 
 import type { TiptapPlugin } from './types'
 

@@ -1,6 +1,6 @@
 {
   "name": "antdv-next-tiptap",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
@@ -44,7 +44,6 @@
     "@tiptap/extension-document": "^3.26.0",
     "@tiptap/extension-dropcursor": "^3.26.0",
     "@tiptap/extension-font-family": "^3.26.0",
-    "@tiptap/extension-font-size": "3.0.0-next.3",
     "@tiptap/extension-gapcursor": "^3.26.0",
     "@tiptap/extension-hard-break": "^3.26.0",
     "@tiptap/extension-heading": "^3.26.0",
@@ -98,7 +97,8 @@
     "vite-svg-loader": "^5.1.1",
     "vue-tsc": "^3.3.5"
   },
-  "homepage": "https://github.com/pengyinghao/antdv-next-tiptap#readme",
+  "license": "MIT",
+  "homepage": "https://pengyinghao.github.io/antdv-next-tiptap",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pengyinghao/antdv-next-tiptap.git"
