@@ -70,7 +70,7 @@ const onCreate = () => {
 <style lang="scss" scoped>
 .toolbar-btn {
     @apply cursor-pointer w-32px h-32px flex-center rounded-6px transition-base flex-shrink-0;
-    @apply text-ant-text hover:bg-ant-primary-bg hover:text-ant-primary;
+    @apply hover:bg-ant-primary-bg hover:c-ant-primary;
 }
 
 .table-grid-selector {

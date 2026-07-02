@@ -5,6 +5,7 @@ import type { EditorPlugin } from './types'
 
 import ImageButton from '../commands/imageButton.vue'
 import ImageView from '../commands/imageView.vue'
+import { imageUploadPlugin } from './imageUpload'
 
 /** 扩展基础 Image，添加 width/height 属性及 NodeView */
 const ResizableImage = Image.extend({
@@ -49,7 +50,7 @@ const ResizableImage = Image.extend({
 
 export const imagePlugin: EditorPlugin = {
     name: 'image',
-    extensions: [ResizableImage.configure({ inline: true, allowBase64: true })],
+    extensions: [ResizableImage.configure({ inline: true, allowBase64: true }), imageUploadPlugin],
     toolbar: [
         { divider: true },
         {

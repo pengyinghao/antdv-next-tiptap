@@ -22,18 +22,18 @@ const PRESET_COLORS = [
     {
         label: '内置颜色',
         colors: [
+            '#91caff',
+            '#69b1ff',
+            '#4096ff',
             '#1677ff',
-            '#0050b3',
-            '#096dd9',
-            '#40a9ff',
-            '#69c0ff',
-            '#f5222d',
-            '#fa541c',
-            '#fa8c16',
-            '#faad14',
-            '#a0d911',
-            '#52c41a',
-            '#13c2c2'
+            '#0958d9',
+            '#ff7875',
+            '#ffbb96',
+            '#ffc069',
+            '#ffe58f',
+            '#d3f261',
+            '#95de64',
+            '#5cdbd3'
         ]
     }
 ]
@@ -101,7 +101,7 @@ const handleConfirm = () => {
 <style lang="scss" scoped>
 .toolbar-btn {
     @apply cursor-pointer w-32px h-32px flex-center rounded-6px transition-base flex-shrink-0;
-    @apply text-ant-text hover:bg-ant-primary-bg hover:text-ant-primary;
+    @apply hover:bg-ant-primary-bg hover:c-ant-primary;
 }
 
 .color-swatch {

@@ -31,6 +31,8 @@ declare module 'vue' {
     ASelect: typeof import('antdv-next')['Select']
     ASwitch: typeof import('antdv-next')['Switch']
     ATooltip: typeof import('antdv-next')['Tooltip']
+    AUpload: typeof import('antdv-next')['Upload']
+    AUploadDragger: typeof import('antdv-next')['UploadDragger']
   }
 }
 
@@ -55,4 +57,6 @@ declare global {
   const ASelect: typeof import('antdv-next')['Select']
   const ASwitch: typeof import('antdv-next')['Switch']
   const ATooltip: typeof import('antdv-next')['Tooltip']
+  const AUpload: typeof import('antdv-next')['Upload']
+  const AUploadDragger: typeof import('antdv-next')['UploadDragger']
 }

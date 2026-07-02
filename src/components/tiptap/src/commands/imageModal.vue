@@ -39,7 +39,7 @@ const handleConfirm = () => {
 </script>
 
 <template>
-    <a-modal v-model:open="open" :title="title" width="480px" :z-index="9999">
+    <a-modal v-model:open="open" :title="title" width="480px" :z-index="9999" :focus-after-show="false">
         <a-form layout="vertical" class="form">
             <a-form-item label="图片地址">
                 <a-input

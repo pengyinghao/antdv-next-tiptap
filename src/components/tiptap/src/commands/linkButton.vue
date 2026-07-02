@@ -55,16 +55,16 @@ const handleCancel = () => {
 
 <template>
     <div title="链接" :class="['toolbar-btn', { active: isActive }]" @click="openModal">
-        <LinkIcon></LinkIcon>
+        <a-tooltip title="链接" placement="bottom">
+            <LinkIcon></LinkIcon>
+        </a-tooltip>
     </div>
     <a-modal
         v-model:open="visible"
         title="插入链接"
         width="420px"
-        :keyboard="false"
-        destroy-on-hidden
+        :closable="false"
         @cancel="handleCancel"
-        @after-open-change="(open: boolean) => open && nextTick(() => hrefInputRef?.focus())"
     >
         <a-form ref="formRef" :model="formData" :rules="rules" layout="vertical" class="link-form">
             <a-form-item label="链接地址" name="href">
@@ -92,7 +92,7 @@ const handleCancel = () => {
 <style lang="scss" scoped>
 .toolbar-btn {
     @apply cursor-pointer w-32px h-32px flex-center rounded-6px transition-base flex-shrink-0;
-    @apply text-ant-text hover:bg-ant-primary-bg hover:text-ant-primary;
+    @apply hover:bg-ant-primary-bg hover:c-ant-primary;
 
     &.active {
         @apply bg-ant-primary-bg text-primary-text;

@@ -48,7 +48,13 @@ const handleAutoPlayChange = (value: boolean) => {
 </script>
 
 <template>
-    <a-modal v-model:open="open" :title="title" width="480px" :z-index="9999">
+    <a-modal
+        v-model:open="open"
+        :title="title"
+        width="480px"
+        :z-index="9999"
+        :focus-after-show="false"
+    >
         <a-form :label-col="{ span: 5 }" :wrapper-col="{ span: 19 }" class="form">
             <a-form-item label="视频地址">
                 <a-input
