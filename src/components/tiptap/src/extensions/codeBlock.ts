@@ -1,7 +1,7 @@
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import { common, createLowlight } from 'lowlight'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 const lowlight = createLowlight(common)
 
@@ -9,7 +9,7 @@ const lowlight = createLowlight(common)
  * 代码块功能扩展
  * 使用 lowlight (highlight.js) 提供语法高亮
  */
-export const codeBlockPlugin: TiptapPlugin = {
+export const codeBlockPlugin: EditorPlugin = {
     name: 'codeBlock',
     extensions: [CodeBlockLowlight.configure({ lowlight })],
     toolbar: [

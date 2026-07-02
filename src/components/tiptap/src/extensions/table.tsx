@@ -5,7 +5,7 @@
  */
 import { Table, TableCell, TableHeader, TableRow } from '@tiptap/extension-table'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 import TableButton from '../commands/tableButton.vue'
 
@@ -22,7 +22,7 @@ const TableRowWithHeight = TableRow.extend({
     }
 })
 
-export const tablePlugin: TiptapPlugin = {
+export const tablePlugin: EditorPlugin = {
     name: 'table',
     extensions: [Table.configure({ resizable: true }), TableRowWithHeight, TableHeader, TableCell],
     toolbar: [

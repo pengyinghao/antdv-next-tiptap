@@ -1,8 +1,8 @@
 import OrderedList from '@tiptap/extension-ordered-list'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
-export const orderedListPlugin: TiptapPlugin = {
+export const orderedListPlugin: EditorPlugin = {
     name: 'orderedList',
     extensions: [OrderedList]
 }

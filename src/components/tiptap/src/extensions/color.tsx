@@ -4,11 +4,11 @@
  */
 import { Color } from '@tiptap/extension-color'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 import ColorButton from '../commands/colorButton.vue'
 
-export const colorPlugin: TiptapPlugin = {
+export const colorPlugin: EditorPlugin = {
     name: 'color',
     /** 注册颜色扩展 */
     extensions: [Color],

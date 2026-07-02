@@ -2,8 +2,6 @@
 import { theme } from 'antdv-next'
 import { ref, watchEffect } from 'vue'
 
-import Tiptap from '@/components/tiptap/src/tiptap.vue'
-
 const isDark = ref(false)
 const value = ref(`<h2 style="text-align: center">Welcome To Antv Next Tiptap Editor Demo
 </h2>
@@ -80,7 +78,7 @@ const handleUploadVideo = mockUpload
                         un-checked-children="☀️"
                     />
                 </div>
-                <Tiptap
+                <a-editor
                     v-model="value"
                     :height="500"
                     :editable="true"

@@ -7,7 +7,7 @@ import { onUnmounted, provide, ref, toRef, watch } from 'vue'
 
 import { useHighlighter } from '@/composables/useHighlight'
 
-import type { TiptapProps } from './tiptapProps'
+import type { EditorProps } from './tiptapProps'
 
 import TableToolbar from './commands/tableToolbar.vue'
 import TextBubbleMenu from './commands/textBubbleMenu.vue'
@@ -26,7 +26,7 @@ defineSlots<{
 }>()
 
 const modelValue = defineModel('modelValue', { type: String })
-const props = withDefaults(defineProps<TiptapProps>(), {
+const props = withDefaults(defineProps<EditorProps>(), {
     height: 300,
     editable: true,
     outputFormat: 'html'

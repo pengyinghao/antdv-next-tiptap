@@ -26,7 +26,7 @@ export interface ToolbarComponent {
 
 export type ToolbarItem = { divider: true } | ToolbarButton | ToolbarComponent
 
-export interface TiptapPlugin {
+export interface EditorPlugin {
     /** 插件唯一标识，用于 disabledPlugins 过滤 */
     name?: PluginName
     extensions: AnyExtension[]

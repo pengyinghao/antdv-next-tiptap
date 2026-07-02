@@ -4,9 +4,9 @@
  */
 import Bold from '@tiptap/extension-bold'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
-export const boldPlugin: TiptapPlugin = {
+export const boldPlugin: EditorPlugin = {
     name: 'bold',
     extensions: [Bold],
     /**

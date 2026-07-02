@@ -1,12 +1,12 @@
 import Code from '@tiptap/extension-code'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 /**
  * 行内代码功能扩展
  * 提供单行代码格式化和工具栏按钮
  */
-export const codePlugin: TiptapPlugin = {
+export const codePlugin: EditorPlugin = {
     name: 'code',
     extensions: [Code],
     toolbar: [

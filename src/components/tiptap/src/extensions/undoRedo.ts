@@ -1,12 +1,12 @@
 import { UndoRedo } from '@tiptap/extensions'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 /**
  * 撤销重做功能扩展
  * 提供撤销和重做操作功能
  */
-export const undoRedoPlugin: TiptapPlugin = {
+export const undoRedoPlugin: EditorPlugin = {
     name: 'undoRedo',
     extensions: [UndoRedo],
     toolbar: [

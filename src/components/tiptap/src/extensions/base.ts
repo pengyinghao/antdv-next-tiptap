@@ -4,8 +4,8 @@ import Paragraph from '@tiptap/extension-paragraph'
 import Text from '@tiptap/extension-text'
 import { Dropcursor, Gapcursor } from '@tiptap/extensions'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
-export const basePlugin: TiptapPlugin = {
+export const basePlugin: EditorPlugin = {
     extensions: [Document, Paragraph, Text, HardBreak, Dropcursor, Gapcursor]
 }

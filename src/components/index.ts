@@ -1,14 +1,12 @@
 import type { App } from 'vue'
 
 import { version } from '../../package.json'
+export * from './tiptap'
 import Tiptap from './tiptap/src/tiptap.vue'
 
 export default {
     install(app: App) {
-        app.component('Tiptap', Tiptap)
+        app.component('AEditor', Tiptap)
     },
     version
 }
-
-export { Tiptap, version }
-export type { TiptapProps } from './tiptap/src/tiptapProps'

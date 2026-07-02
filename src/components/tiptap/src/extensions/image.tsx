@@ -1,7 +1,7 @@
 import Image from '@tiptap/extension-image'
 import { VueNodeViewRenderer } from '@tiptap/vue-3'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 import ImageButton from '../commands/imageButton.vue'
 import ImageView from '../commands/imageView.vue'
@@ -47,7 +47,7 @@ const ResizableImage = Image.extend({
     }
 })
 
-export const imagePlugin: TiptapPlugin = {
+export const imagePlugin: EditorPlugin = {
     name: 'image',
     extensions: [ResizableImage.configure({ inline: true, allowBase64: true })],
     toolbar: [

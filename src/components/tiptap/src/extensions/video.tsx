@@ -1,9 +1,9 @@
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 import VideoButton from '../commands/videoButton.vue'
 import { VideoNode } from './videoNode'
 
-export const videoPlugin: TiptapPlugin = {
+export const videoPlugin: EditorPlugin = {
     name: 'video',
     extensions: [VideoNode],
     toolbar: [

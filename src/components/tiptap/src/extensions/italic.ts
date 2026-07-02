@@ -4,9 +4,9 @@
  */
 import Italic from '@tiptap/extension-italic'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
-export const italicPlugin: TiptapPlugin = {
+export const italicPlugin: EditorPlugin = {
     name: 'italic',
     extensions: [Italic],
     toolbar: [

@@ -1,6 +1,6 @@
 import type { Editor } from '@tiptap/vue-3'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 const escapeHtml = (value: string) =>
     value.replace(/[&<>"']/g, (char) => {
@@ -529,7 +529,7 @@ function printHtml(html: string) {
     window.setTimeout(() => void print(), 500)
 }
 
-export const printPlugin: TiptapPlugin = {
+export const printPlugin: EditorPlugin = {
     name: 'print',
     extensions: [],
     toolbar: [

@@ -1,12 +1,12 @@
 import Strike from '@tiptap/extension-strike'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 /**
  * 删除线功能扩展
  * 提供文本删除线格式化和工具栏按钮
  */
-export const strikePlugin: TiptapPlugin = {
+export const strikePlugin: EditorPlugin = {
     name: 'strike',
     extensions: [Strike],
     toolbar: [

@@ -31,13 +31,13 @@ export type OutputFormat = 'html' | 'json'
 /** 上传函数签名，onProgress 回调传入 0-100 的进度百分比 */
 export type UploadFn = (file: File, onProgress: (percent: number) => void) => Promise<string>
 
-export interface TiptapProps {
+export interface EditorProps {
     /** 内容区域高度 */
     height?: number
     /** 是否可编辑 */
     editable?: boolean
     /**
-     * 禁用的插件名称列表，对应 TiptapPlugin.name
+     * 禁用的插件名称列表，对应 EditorPlugin.name
      * @example ['image', 'video', 'table']
      */
     disabledPlugins?: PluginName[]

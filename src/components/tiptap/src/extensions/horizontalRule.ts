@@ -1,12 +1,12 @@
 import HorizontalRule from '@tiptap/extension-horizontal-rule'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 /**
  * 分割线功能扩展
  * 提供水平分割线插入功能
  */
-export const horizontalRulePlugin: TiptapPlugin = {
+export const horizontalRulePlugin: EditorPlugin = {
     name: 'horizontalRule',
     extensions: [HorizontalRule],
     toolbar: [

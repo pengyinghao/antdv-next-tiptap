@@ -1,4 +1,4 @@
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 import ListSelect from '../commands/listSelect.vue'
 import { basePlugin } from './base'
@@ -29,10 +29,10 @@ import { underlinePlugin } from './underline'
 import { undoRedoPlugin } from './undoRedo'
 import { videoPlugin } from './video'
 
-export type { TiptapPlugin, ToolbarItem, ToolbarButton, ToolbarComponent } from './types'
+export type { EditorPlugin, ToolbarItem, ToolbarButton, ToolbarComponent } from './types'
 
 // 列表合并 dropdown toolbar（不注册额外 extension，只提供工具栏入口）
-const listToolbarPlugin: TiptapPlugin = {
+const listToolbarPlugin: EditorPlugin = {
     name: 'list',
     extensions: [],
     toolbar: [
@@ -44,7 +44,7 @@ const listToolbarPlugin: TiptapPlugin = {
     ]
 }
 
-export const defaultPlugins: TiptapPlugin[] = [
+export const defaultPlugins: EditorPlugin[] = [
     basePlugin,
     textStylePlugin,
 

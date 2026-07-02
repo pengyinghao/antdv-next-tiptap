@@ -1,6 +1,6 @@
 import Highlight from '@tiptap/extension-highlight'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 import ColorButton from '../commands/colorButton.vue'
 
@@ -9,7 +9,7 @@ import ColorButton from '../commands/colorButton.vue'
  * 提供文本背景高亮色选择功能
  * 支持多色彩高亮显示
  */
-export const highlightPlugin: TiptapPlugin = {
+export const highlightPlugin: EditorPlugin = {
     name: 'highlight',
     extensions: [Highlight.configure({ multicolor: true })],
     toolbar: [

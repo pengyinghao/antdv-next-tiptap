@@ -1,10 +1,10 @@
 import Heading from '@tiptap/extension-heading'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
 import HeadingSelect from '../commands/headingSelect.vue'
 
-export const headingPlugin: TiptapPlugin = {
+export const headingPlugin: EditorPlugin = {
     name: 'heading',
     extensions: [Heading.configure({ levels: [1, 2, 3] })],
     toolbar: [

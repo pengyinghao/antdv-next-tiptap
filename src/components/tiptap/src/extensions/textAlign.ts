@@ -4,9 +4,9 @@
  */
 import TextAlign from '@tiptap/extension-text-align'
 
-import type { TiptapPlugin } from './types'
+import type { EditorPlugin } from './types'
 
-export const textAlignPlugin: TiptapPlugin = {
+export const textAlignPlugin: EditorPlugin = {
     name: 'textAlign',
     extensions: [TextAlign.configure({ types: ['heading', 'paragraph'] })],
     toolbar: [
