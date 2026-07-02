@@ -1,5 +1,8 @@
 import { UndoRedo } from '@tiptap/extensions'
 
+import ArrowGoBackLineIcon from '@/assets/icons/ri--arrow-go-back-line.svg'
+import ArrowGoForwardLineIcon from '@/assets/icons/ri--arrow-go-forward-line.svg'
+
 import type { EditorPlugin } from './types'
 
 /**
@@ -12,12 +15,12 @@ export const undoRedoPlugin: EditorPlugin = {
     toolbar: [
         { divider: true },
         {
-            icon: 'ri:arrow-go-back-line',
+            icon: ArrowGoBackLineIcon,
             title: '撤销',
             action: (editor) => editor.chain().focus().undo().run()
         },
         {
-            icon: 'ri:arrow-go-forward-line',
+            icon: ArrowGoForwardLineIcon,
             title: '重做',
             action: (editor) => editor.chain().focus().redo().run()
         }

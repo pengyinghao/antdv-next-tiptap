@@ -1,5 +1,7 @@
 import HorizontalRule from '@tiptap/extension-horizontal-rule'
 
+import SeparatorIcon from '@/assets/icons/ri--separator.svg'
+
 import type { EditorPlugin } from './types'
 
 /**
@@ -11,7 +13,7 @@ export const horizontalRulePlugin: EditorPlugin = {
     extensions: [HorizontalRule],
     toolbar: [
         {
-            icon: 'ri:separator',
+            icon: SeparatorIcon,
             title: '分割线',
             action: (editor) => editor.chain().focus().setHorizontalRule().run()
         }

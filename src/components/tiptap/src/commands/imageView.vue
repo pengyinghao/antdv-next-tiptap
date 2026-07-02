@@ -1,7 +1,12 @@
 <script lang="ts" setup>
 import { nodeViewProps, NodeViewWrapper } from '@tiptap/vue-3'
 
-import Icon from '@/components/icon/icon.vue'
+import AlignCenterIcon from '@/assets/icons/ri--align-center.svg'
+import AlignJustifyIcon from '@/assets/icons/ri--align-justify.svg'
+import AlignLeftIcon from '@/assets/icons/ri--align-left.svg'
+import AlignRightIcon from '@/assets/icons/ri--align-right.svg'
+import DeleteBinLine from '@/assets/icons/ri--delete-bin-line.svg'
+import PencilLineIcon from '@/assets/icons/ri--pencil-line.svg'
 
 import { editableKey } from '../injectionKeys'
 import ImageModal, { type ImageFormData } from './imageModal.vue'
@@ -27,10 +32,10 @@ const handleConfirm = (data: ImageFormData) => {
 }
 
 const displayModes = [
-    { key: 'block', icon: 'ri:align-justify', label: '独行' },
-    { key: 'inline', icon: 'ri:align-center', label: '行内' },
-    { key: 'left', icon: 'ri:align-left', label: '左浮动' },
-    { key: 'right', icon: 'ri:align-right', label: '右浮动' }
+    { key: 'block', icon: AlignJustifyIcon, label: '独行' },
+    { key: 'inline', icon: AlignCenterIcon, label: '行内' },
+    { key: 'left', icon: AlignLeftIcon, label: '左浮动' },
+    { key: 'right', icon: AlignRightIcon, label: '右浮动' }
 ]
 
 const viewClass = computed(() => {
@@ -67,14 +72,14 @@ const editable = inject(editableKey)
                             }"
                             @click.stop="updateAttributes({ display: mode.key })"
                         >
-                            <Icon :name="mode.icon" size="14" />
+                            <component :is="mode.icon"></component>
                         </div>
                     </a-tooltip>
 
                     <div class="image-toolbar__divider" />
                     <a-tooltip title="编辑" placement="top">
                         <div class="image-toolbar__btn" @click.stop="modalOpen = true">
-                            <Icon name="ri:pencil-line" size="14" />
+                            <PencilLineIcon></PencilLineIcon>
                         </div>
                     </a-tooltip>
                     <div class="image-toolbar__divider" />
@@ -83,7 +88,7 @@ const editable = inject(editableKey)
                             class="image-toolbar__btn image-toolbar__btn--danger"
                             @click.stop="deleteNode()"
                         >
-                            <Icon name="ri:delete-bin-line" size="14" />
+                            <DeleteBinLine></DeleteBinLine>
                         </div>
                     </a-tooltip>
                 </div>

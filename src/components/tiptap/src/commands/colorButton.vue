@@ -4,8 +4,6 @@ import type { Color, ColorValueType } from 'antdv-next'
 
 import { computed, ref, shallowRef, watch } from 'vue'
 
-import Icon from '@/components/icon/icon.vue'
-
 type PickerColor = Extract<ColorValueType, string | { cleared: any }>
 
 const props = defineProps<{
@@ -92,7 +90,7 @@ const handleConfirm = () => {
         <a-tooltip :title="title">
             <div class="toolbar-btn">
                 <div class="flex flex-col items-center gap-1px">
-                    <Icon :name="icon" size="14" />
+                    <component :is="icon"></component>
                     <span class="color-swatch" :style="{ background: displayColor }" />
                 </div>
             </div>

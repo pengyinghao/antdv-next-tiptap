@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import type { Editor } from '@tiptap/vue-3'
 
-import Icon from '@/components/icon/icon.vue'
-
 import type { ToolbarButton, ToolbarComponent } from './extensions/types'
 
 const props = defineProps<{
@@ -36,7 +34,7 @@ const buttonItem = computed(() => {
             :class="['toolbar-btn', { active: isActive, disabled: isDisabled }]"
             @click="!isDisabled && editor && buttonItem.action(editor)"
         >
-            <Icon :name="buttonItem.icon" :size="buttonItem.size ?? 16" />
+            <component :is="buttonItem.icon"></component>
         </div>
     </a-tooltip>
 </template>

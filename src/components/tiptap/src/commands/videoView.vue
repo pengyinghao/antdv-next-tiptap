@@ -2,7 +2,8 @@
 import { nodeViewProps, NodeViewWrapper } from '@tiptap/vue-3'
 import { computed, inject, ref } from 'vue'
 
-import Icon from '@/components/icon/icon.vue'
+import DeleteBinLine from '@/assets/icons/ri--delete-bin-line.svg'
+import PencilLineIcon from '@/assets/icons/ri--pencil-line.svg'
 
 import type { VideoFormData } from './videoModal.vue'
 
@@ -62,7 +63,7 @@ const handleConfirm = (data: VideoFormData) => {
                 <div class="video-toolbar">
                     <a-tooltip title="编辑" placement="top">
                         <div class="video-toolbar__btn" @click.stop="modalOpen = true">
-                            <Icon name="ri:pencil-line" size="14" />
+                            <PencilLineIcon></PencilLineIcon>
                         </div>
                     </a-tooltip>
                     <div class="video-toolbar__divider" />
@@ -71,7 +72,7 @@ const handleConfirm = (data: VideoFormData) => {
                             class="video-toolbar__btn video-toolbar__btn--danger"
                             @click.stop="deleteNode()"
                         >
-                            <Icon name="ri:delete-bin-line" size="14" />
+                            <DeleteBinLine></DeleteBinLine>
                         </div>
                     </a-tooltip>
                 </div>

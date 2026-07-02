@@ -1,5 +1,7 @@
 import Underline from '@tiptap/extension-underline'
 
+import UnderlineIcon from '@/assets/icons/ri--underline.svg'
+
 import type { EditorPlugin } from './types'
 
 /**
@@ -11,7 +13,7 @@ export const underlinePlugin: EditorPlugin = {
     extensions: [Underline],
     toolbar: [
         {
-            icon: 'ri:underline',
+            icon: UnderlineIcon,
             title: '下划线',
             action: (editor) => editor.chain().focus().toggleUnderline().run(),
             isActive: (editor) => editor.isActive('underline')

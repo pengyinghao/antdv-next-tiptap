@@ -4,7 +4,12 @@ import type { Editor } from '@tiptap/vue-3'
 import { isTextSelection } from '@tiptap/core'
 import { BubbleMenu } from '@tiptap/vue-3/menus'
 
-import Icon from '@/components/icon/icon.vue'
+import BoldIcon from '@/assets/icons/ri--bold.svg'
+import FontColorIcon from '@/assets/icons/ri--font-color.svg'
+import ItalicIcon from '@/assets/icons/ri--italic.svg'
+import PaintFillIcon from '@/assets/icons/ri--paint-fill.svg'
+import StrikethroughIcon from '@/assets/icons/ri--strikethrough.svg'
+import UnderlineIcon from '@/assets/icons/ri--underline.svg'
 
 import ColorButton from './colorButton.vue'
 
@@ -18,28 +23,28 @@ const showHighlight = computed(() => hasExt('highlight'))
 
 const buttons = [
     {
-        icon: 'ri:bold',
+        icon: BoldIcon,
         title: '加粗',
         action: () => props.editor.chain().focus().toggleBold().run(),
         isActive: () => props.editor.isActive('bold'),
         ext: 'bold'
     },
     {
-        icon: 'ri:italic',
+        icon: ItalicIcon,
         title: '斜体',
         action: () => props.editor.chain().focus().toggleItalic().run(),
         isActive: () => props.editor.isActive('italic'),
         ext: 'italic'
     },
     {
-        icon: 'ri:underline',
+        icon: UnderlineIcon,
         title: '下划线',
         action: () => props.editor.chain().focus().toggleUnderline().run(),
         isActive: () => props.editor.isActive('underline'),
         ext: 'underline'
     },
     {
-        icon: 'ri:strikethrough',
+        icon: StrikethroughIcon,
         title: '删除线',
         action: () => props.editor.chain().focus().toggleStrike().run(),
         isActive: () => props.editor.isActive('strike'),
@@ -90,7 +95,7 @@ const getColor = (type: 'textStyle' | 'highlight', defaultColor: string = '#000'
                         :class="{ 'bubble-btn--active': btn.isActive() }"
                         @click="btn.action()"
                     >
-                        <Icon :name="btn.icon" size="14" />
+                        <component :is="btn.icon"></component>
                     </div>
                 </a-tooltip>
             </template>
@@ -98,7 +103,7 @@ const getColor = (type: 'textStyle' | 'highlight', defaultColor: string = '#000'
             <ColorButton
                 v-if="showColor"
                 :editor="editor"
-                icon="ri:font-family"
+                :icon="FontColorIcon"
                 title="文字颜色"
                 :get-color="() => getColor('textStyle')"
                 :apply="applyColor"
@@ -106,7 +111,7 @@ const getColor = (type: 'textStyle' | 'highlight', defaultColor: string = '#000'
             <ColorButton
                 v-if="showHighlight"
                 :editor="editor"
-                icon="ri:paint-fill"
+                :icon="PaintFillIcon"
                 title="背景颜色"
                 :get-color="() => getColor('highlight', '#fff')"
                 :apply="applyHighlight"

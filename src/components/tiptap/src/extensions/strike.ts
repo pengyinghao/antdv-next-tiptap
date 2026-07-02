@@ -1,5 +1,7 @@
 import Strike from '@tiptap/extension-strike'
 
+import StrikethroughIcon from '@/assets/icons/ri--strikethrough.svg'
+
 import type { EditorPlugin } from './types'
 
 /**
@@ -11,7 +13,7 @@ export const strikePlugin: EditorPlugin = {
     extensions: [Strike],
     toolbar: [
         {
-            icon: 'ri:strikethrough',
+            icon: StrikethroughIcon,
             title: '删除线',
             action: (editor) => editor.chain().focus().toggleStrike().run(),
             isActive: (editor) => editor.isActive('strike')

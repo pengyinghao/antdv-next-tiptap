@@ -47,42 +47,61 @@ const listToolbarPlugin: EditorPlugin = {
 export const defaultPlugins: EditorPlugin[] = [
     basePlugin,
     textStylePlugin,
-
+    // 字体
     fontFamilyPlugin,
+    // 字体大小
     fontSizePlugin,
-
+    // 字体格式化
     headingPlugin,
-
+    // 加粗
     boldPlugin,
+    // 斜体
     italicPlugin,
+    // 下划线
     underlinePlugin,
+    // 删除线
     strikePlugin,
 
+    // 文本颜色
     colorPlugin,
+    // 文本背景色
     highlightPlugin,
-
+    // 连接
     linkPlugin,
 
+    // 文本对齐方式
     textAlignPlugin,
 
+    // 有序、无序、任务 列表
     bulletListPlugin,
     orderedListPlugin,
     taskListPlugin,
     listToolbarPlugin,
 
+    // 引用
     blockquotePlugin,
+    // 行内代码
     codePlugin,
+    // 代码块
     codeBlockPlugin,
+    // 分割线
     horizontalRulePlugin,
 
+    // 图片上传
     imagePlugin,
+    // 视频上传
     videoPlugin,
 
+    // 插入表格
     tablePlugin,
 
+    // 清除格式
     clearFormatPlugin,
+    // 撤销、重做
     undoRedoPlugin,
 
+    // 打印
     printPlugin,
+    // 全屏、退出全屏
     fullscreenPlugin
 ]

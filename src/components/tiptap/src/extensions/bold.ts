@@ -4,6 +4,8 @@
  */
 import Bold from '@tiptap/extension-bold'
 
+import BoldIcon from '@/assets/icons/ri--bold.svg'
+
 import type { EditorPlugin } from './types'
 
 export const boldPlugin: EditorPlugin = {
@@ -17,7 +19,7 @@ export const boldPlugin: EditorPlugin = {
     toolbar: [
         { divider: true },
         {
-            icon: 'ri:bold',
+            icon: BoldIcon,
             title: '加粗', // 按钮提示文本
             action: (editor) => editor.chain().focus().toggleBold().run(), // 点击操作
             isActive: (editor) => editor.isActive('bold') // 判断当前是否激活状态

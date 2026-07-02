@@ -4,25 +4,33 @@ import type { Editor } from '@tiptap/vue-3'
 import { BubbleMenu } from '@tiptap/vue-3/menus'
 import { onMounted, onUnmounted } from 'vue'
 
-import Icon from '@/components/icon/icon.vue'
+import ArrowDownLineIcon from '@/assets/icons/ri--arrow-down-line.svg'
+import ArrowLeftLineICon from '@/assets/icons/ri--arrow-left-line.svg'
+import ArrowRightLineIcon from '@/assets/icons/ri--arrow-right-line.svg'
+import ArrowUpLineIcon from '@/assets/icons/ri--arrow-up-line.svg'
+import DeleteBinLineIcon from '@/assets/icons/ri--delete-bin-line.svg'
+import DragMoveLineIcon from '@/assets/icons/ri--drag-move-line.svg'
+import FullScreenExitLineIcon from '@/assets/icons/ri--fullscreen-exit-line.svg'
+import FullScreenLineIcon from '@/assets/icons/ri--fullscreen-line.svg'
+import SubtractLineIcon from '@/assets/icons/ri--subtract-line.svg'
 
 const props = defineProps<{ editor: Editor }>()
 
 const actions = [
     {
-        icon: 'ri:arrow-left-line',
+        icon: ArrowLeftLineICon,
         title: '向前插入列',
         action: () => props.editor.chain().focus().addColumnBefore().run(),
         isDisabled: () => !props.editor.can().addColumnBefore()
     },
     {
-        icon: 'ri:arrow-right-line',
+        icon: ArrowRightLineIcon,
         title: '向后插入列',
         action: () => props.editor.chain().focus().addColumnAfter().run(),
         isDisabled: () => !props.editor.can().addColumnAfter()
     },
     {
-        icon: 'ri:subtract-line',
+        icon: SubtractLineIcon,
         title: '删除列',
         action: () => props.editor.chain().focus().deleteColumn().run(),
         isDisabled: () => !props.editor.can().deleteColumn(),
@@ -30,19 +38,19 @@ const actions = [
     },
     { divider: true },
     {
-        icon: 'ri:arrow-up-line',
+        icon: ArrowUpLineIcon,
         title: '向前插入行',
         action: () => props.editor.chain().focus().addRowBefore().run(),
         isDisabled: () => !props.editor.can().addRowBefore()
     },
     {
-        icon: 'ri:arrow-down-line',
+        icon: ArrowDownLineIcon,
         title: '向后插入行',
         action: () => props.editor.chain().focus().addRowAfter().run(),
         isDisabled: () => !props.editor.can().addRowAfter()
     },
     {
-        icon: 'ri:subtract-line',
+        icon: SubtractLineIcon,
         title: '删除行',
         action: () => props.editor.chain().focus().deleteRow().run(),
         isDisabled: () => !props.editor.can().deleteRow(),
@@ -51,20 +59,20 @@ const actions = [
     },
     { divider: true },
     {
-        icon: 'ri:fullscreen-exit-line',
+        icon: FullScreenExitLineIcon,
         title: '合并单元格',
         action: () => props.editor.chain().focus().mergeCells().run(),
         isDisabled: () => !props.editor.can().mergeCells()
     },
     {
-        icon: 'ri:fullscreen-line',
+        icon: FullScreenLineIcon,
         title: '拆分单元格',
         action: () => props.editor.chain().focus().splitCell().run(),
         isDisabled: () => !props.editor.can().splitCell()
     },
     { divider: true },
     {
-        icon: 'ri:delete-bin-line',
+        icon: DeleteBinLineIcon,
         title: '删除表格',
         action: () => props.editor.chain().focus().deleteTable().run(),
         isDisabled: () => !props.editor.can().deleteTable(),
@@ -151,11 +159,10 @@ const applyRowHeight = (val: number | null) => {
                             :disabled="item.isDisabled()"
                             @click="item.action"
                         >
-                            <Icon
-                                :name="item.icon"
-                                size="13"
+                            <component
+                                :is="item.icon"
                                 :style="item.rotate ? `transform: rotate(${item.rotate}deg)` : ''"
-                            />
+                            ></component>
                         </button>
                     </span>
                 </a-tooltip>
@@ -163,7 +170,7 @@ const applyRowHeight = (val: number | null) => {
             <div class="table-toolbar-divider" />
             <a-tooltip title="设置行高">
                 <div class="table-toolbar-row-height">
-                    <Icon name="ri:drag-move-line" size="12" class="row-height-icon" />
+                    <DragMoveLineIcon class="row-height-icon"></DragMoveLineIcon>
                     <a-input-number
                         :value="rowHeight"
                         :min="20"

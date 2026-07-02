@@ -1,5 +1,7 @@
 import type { Editor } from '@tiptap/vue-3'
 
+import PrintLineIcon from '@/assets/icons/ri--printer-line.svg'
+
 import type { EditorPlugin } from './types'
 
 const escapeHtml = (value: string) =>
@@ -535,7 +537,7 @@ export const printPlugin: EditorPlugin = {
     toolbar: [
         { divider: true },
         {
-            icon: 'ri:printer-line',
+            icon: PrintLineIcon,
             title: '打印',
             action: (editor: Editor) => {
                 printHtml(editor.getHTML())

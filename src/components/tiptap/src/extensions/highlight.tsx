@@ -1,5 +1,7 @@
 import Highlight from '@tiptap/extension-highlight'
 
+import PaintFillIcon from '@/assets/icons/ri--paint-fill.svg'
+
 import type { EditorPlugin } from './types'
 
 import ColorButton from '../commands/colorButton.vue'
@@ -18,7 +20,7 @@ export const highlightPlugin: EditorPlugin = {
             render: (editor) => (
                 <ColorButton
                     editor={editor}
-                    icon="ri:paint-fill"
+                    icon={PaintFillIcon}
                     title="高亮"
                     getColor={() =>
                         (editor.getAttributes('highlight').color as string | undefined) ?? '#fff'

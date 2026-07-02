@@ -3,7 +3,8 @@ import type { Editor } from '@tiptap/vue-3'
 
 import { onMounted, onUnmounted, ref } from 'vue'
 
-import Icon from '@/components/icon/icon.vue'
+import FullscreenExitLineIcon from '@/assets/icons/ri--fullscreen-exit-line.svg'
+import FullscreenLineIcon from '@/assets/icons/ri--fullscreen-line.svg'
 
 const props = defineProps<{ editor: Editor }>()
 
@@ -30,10 +31,8 @@ onUnmounted(() => document.removeEventListener('fullscreenchange', onFullscreenC
 <template>
     <a-tooltip :title="isFullscreen ? '退出全屏' : '全屏'" placement="bottom">
         <div class="toolbar-btn" @click="toggle">
-            <Icon
-                :name="isFullscreen ? 'ri:fullscreen-exit-line' : 'ri:fullscreen-line'"
-                size="16"
-            />
+            <FullscreenExitLineIcon v-if="isFullscreen"></FullscreenExitLineIcon>
+            <FullscreenLineIcon v-else></FullscreenLineIcon>
         </div>
     </a-tooltip>
 </template>

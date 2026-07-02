@@ -4,6 +4,8 @@
  */
 import { Color } from '@tiptap/extension-color'
 
+import FontColorIcon from '@/assets/icons/ri--font-color.svg'
+
 import type { EditorPlugin } from './types'
 
 import ColorButton from '../commands/colorButton.vue'
@@ -19,7 +21,7 @@ export const colorPlugin: EditorPlugin = {
             render: (editor) => (
                 <ColorButton
                     editor={editor}
-                    icon="ri:font-family"
+                    icon={FontColorIcon}
                     title="文字颜色"
                     getColor={() =>
                         (editor.getAttributes('textStyle').color as string | undefined) ?? '#000000'

@@ -4,6 +4,8 @@
  */
 import Italic from '@tiptap/extension-italic'
 
+import ItalicIcon from '@/assets/icons/ri--italic.svg'
+
 import type { EditorPlugin } from './types'
 
 export const italicPlugin: EditorPlugin = {
@@ -11,7 +13,7 @@ export const italicPlugin: EditorPlugin = {
     extensions: [Italic],
     toolbar: [
         {
-            icon: 'ri:italic',
+            icon: ItalicIcon,
             title: '斜体',
             action: (editor) => editor.chain().focus().toggleItalic().run(),
             isActive: (editor) => editor.isActive('italic')

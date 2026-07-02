@@ -1,14 +1,17 @@
 <script lang="ts" setup>
 import type { Editor } from '@tiptap/vue-3'
 
-import Icon from '@/components/icon/icon.vue'
+import ArrowDownSLine from '@/assets/icons/ri--arrow-down-s-line.svg'
+import H1Icon from '@/assets/icons/ri--h1.svg'
+import H2Icon from '@/assets/icons/ri--h2.svg'
+import H3Icon from '@/assets/icons/ri--h3.svg'
 
 const props = defineProps<{ editor: Editor }>()
 
 const items = [
-    { level: 1, icon: 'ri:h-1', label: '标题 1' },
-    { level: 2, icon: 'ri:h-2', label: '标题 2' },
-    { level: 3, icon: 'ri:h-3', label: '标题 3' }
+    { level: 1, icon: H1Icon, label: '标题 1' },
+    { level: 2, icon: H2Icon, label: '标题 2' },
+    { level: 3, icon: H3Icon, label: '标题 3' }
 ] as const
 
 const activeLevel = computed(() => {
@@ -18,9 +21,7 @@ const activeLevel = computed(() => {
     return null
 })
 
-const activeIcon = computed(
-    () => items.find((i) => i.level === activeLevel.value)?.icon ?? 'ri:h-1'
-)
+const activeIcon = computed(() => items.find((i) => i.level === activeLevel.value)?.icon ?? H1Icon)
 
 const toggle = (level: (typeof items)[number]['level']) => {
     props.editor.chain().focus().toggleHeading({ level }).run()
@@ -30,8 +31,8 @@ const toggle = (level: (typeof items)[number]['level']) => {
 <template>
     <a-dropdown :trigger="['hover']" placement="bottomLeft">
         <div :class="['toolbar-btn', { active: activeLevel !== null }]">
-            <Icon :name="activeIcon" size="16" />
-            <Icon name="ri:arrow-down-s-line" size="10" class="ml-1px" />
+            <component :is="activeIcon"></component>
+            <ArrowDownSLine class="ml-1px"></ArrowDownSLine>
         </div>
         <template #popupRender>
             <a-menu>
@@ -41,7 +42,7 @@ const toggle = (level: (typeof items)[number]['level']) => {
                     @click="toggle(item.level)"
                 >
                     <div :class="['heading-item', { active: activeLevel === item.level }]">
-                        <Icon :name="item.icon" size="16" />
+                        <component :is="item.icon"></component>
                         <span>{{ item.label }}</span>
                     </div>
                 </a-menu-item>

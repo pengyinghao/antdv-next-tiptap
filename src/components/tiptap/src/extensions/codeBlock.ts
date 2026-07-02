@@ -1,6 +1,8 @@
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import { common, createLowlight } from 'lowlight'
 
+import CodeBoxLineIcon from '@/assets/icons/ri--code-box-line.svg'
+
 import type { EditorPlugin } from './types'
 
 const lowlight = createLowlight(common)
@@ -14,7 +16,7 @@ export const codeBlockPlugin: EditorPlugin = {
     extensions: [CodeBlockLowlight.configure({ lowlight })],
     toolbar: [
         {
-            icon: 'ri:code-box-line',
+            icon: CodeBoxLineIcon,
             title: '代码块',
             action: (editor) => editor.chain().focus().toggleCodeBlock().run(),
             isActive: (editor) => editor.isActive('codeBlock')

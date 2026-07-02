@@ -1,5 +1,7 @@
 import Code from '@tiptap/extension-code'
 
+import CodeLineIcon from '@/assets/icons/ri--code-line.svg'
+
 import type { EditorPlugin } from './types'
 
 /**
@@ -11,7 +13,7 @@ export const codePlugin: EditorPlugin = {
     extensions: [Code],
     toolbar: [
         {
-            icon: 'ri:code-line',
+            icon: CodeLineIcon,
             title: '行内代码',
             action: (editor) => editor.chain().focus().toggleCode().run(),
             isActive: (editor) => editor.isActive('code')

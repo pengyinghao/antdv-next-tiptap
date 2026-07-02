@@ -1,3 +1,5 @@
+import EraserLineIcon from '@/assets/icons/ri--eraser-line.svg'
+
 import type { EditorPlugin } from './types'
 
 /**
@@ -11,7 +13,7 @@ export const clearFormatPlugin: EditorPlugin = {
     toolbar: [
         { divider: true },
         {
-            icon: 'ri:eraser-line',
+            icon: EraserLineIcon,
             title: '清除格式',
             action: (editor) => editor.chain().focus().clearNodes().unsetAllMarks().run()
         }

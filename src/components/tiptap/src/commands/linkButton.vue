@@ -5,7 +5,7 @@ import type { Rule } from 'antdv-next/dist/form/types'
 
 import { computed, nextTick, reactive, ref } from 'vue'
 
-import Icon from '@/components/icon/icon.vue'
+import LinkIcon from '@/assets/icons/ri--link.svg'
 
 const props = defineProps<{ editor?: Editor }>()
 
@@ -55,7 +55,7 @@ const handleCancel = () => {
 
 <template>
     <div title="链接" :class="['toolbar-btn', { active: isActive }]" @click="openModal">
-        <Icon name="ri:links-line" />
+        <LinkIcon></LinkIcon>
     </div>
     <a-modal
         v-model:open="visible"

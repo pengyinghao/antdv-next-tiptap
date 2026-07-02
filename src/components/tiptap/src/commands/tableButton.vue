@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Editor } from '@tiptap/vue-3'
 
-import Icon from '@/components/icon/icon.vue'
+import LayoutGridLine from '@/assets/icons/ri--layout-grid-line.svg'
 
 const props = defineProps<{ editor?: Editor }>()
 
@@ -62,7 +62,7 @@ const onCreate = () => {
             </div>
         </template>
         <div title="插入表格" class="toolbar-btn">
-            <Icon name="ri:layout-grid-line" size="16" />
+            <LayoutGridLine></LayoutGridLine>
         </div>
     </a-popover>
 </template>

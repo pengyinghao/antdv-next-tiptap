@@ -31,8 +31,6 @@
     "vue": "^3.6.0-beta.14"
   },
   "dependencies": {
-    "@iconify-json/ri": "^1.2.10",
-    "@iconify/vue": "^5.0.1",
     "@tiptap/core": "^3.26.0",
     "@tiptap/extension-blockquote": "^3.26.0",
     "@tiptap/extension-bold": "^3.26.0",

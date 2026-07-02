@@ -3,7 +3,7 @@ import type { Editor } from '@tiptap/vue-3'
 
 import { inject, ref } from 'vue'
 
-import Icon from '@/components/icon/icon.vue'
+import VideoLineIcon from '@/assets/icons/ri--video-line.svg'
 
 import { uploadVideoKey } from '../injectionKeys'
 import VideoModal, { type VideoFormData } from './videoModal.vue'
@@ -75,7 +75,7 @@ const handleFileChange = (e: Event) => {
                         :size="20"
                         :stroke-width="12"
                     />
-                    <Icon v-else name="ri:video-line" size="16" />
+                    <VideoLineIcon></VideoLineIcon>
                 </div>
             </a-tooltip>
             <template #popupRender>
@@ -88,7 +88,7 @@ const handleFileChange = (e: Event) => {
     </template>
     <template v-else>
         <div title="插入视频" class="toolbar-btn" @click="handleOpen">
-            <Icon name="ri:video-line" size="16" />
+            <VideoLineIcon></VideoLineIcon>
         </div>
     </template>
 

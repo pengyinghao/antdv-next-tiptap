@@ -3,7 +3,7 @@ import type { Editor } from '@tiptap/vue-3'
 
 import { inject, ref } from 'vue'
 
-import Icon from '@/components/icon/icon.vue'
+import ImageLineIcon from '@/assets/icons/ri--image-line.svg'
 
 import { uploadImageKey } from '../injectionKeys'
 import ImageModal, { type ImageFormData } from './imageModal.vue'
@@ -76,7 +76,7 @@ const handleConfirm = (data: ImageFormData) => {
                     :size="20"
                     :stroke-width="12"
                 />
-                <Icon v-else name="ri:image-line" size="16" />
+                <ImageLineIcon v-else />
             </div>
         </a-tooltip>
         <template #popupRender>

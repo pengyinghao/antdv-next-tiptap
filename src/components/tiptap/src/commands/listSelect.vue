@@ -1,26 +1,29 @@
 <script lang="ts" setup>
 import type { Editor } from '@tiptap/vue-3'
 
-import Icon from '@/components/icon/icon.vue'
+import ArrowDownSLine from '@/assets/icons/ri--arrow-down-s-line.svg'
+import ListCheck2Icon from '@/assets/icons/ri--list-check-2.svg'
+import ListOrderedIcon from '@/assets/icons/ri--list-ordered.svg'
+import ListUnorderedIcon from '@/assets/icons/ri--list-unordered.svg'
 
 const props = defineProps<{ editor: Editor }>()
 
 const items = [
     {
         key: 'bulletList',
-        icon: 'ri:list-unordered',
+        icon: ListUnorderedIcon,
         label: '无序列表',
         action: (e: Editor) => e.chain().focus().toggleBulletList().run()
     },
     {
         key: 'orderedList',
-        icon: 'ri:list-ordered',
+        icon: ListOrderedIcon,
         label: '有序列表',
         action: (e: Editor) => e.chain().focus().toggleOrderedList().run()
     },
     {
         key: 'taskList',
-        icon: 'ri:list-check-2',
+        icon: ListCheck2Icon,
         label: '任务列表',
         action: (e: Editor) => e.chain().focus().toggleTaskList().run()
     }
@@ -28,21 +31,21 @@ const items = [
 
 const activeKey = computed(() => items.find((i) => props.editor.isActive(i.key))?.key ?? null)
 const activeIcon = computed(
-    () => items.find((i) => i.key === activeKey.value)?.icon ?? 'ri:list-unordered'
+    () => items.find((i) => i.key === activeKey.value)?.icon ?? ListUnorderedIcon
 )
 </script>
 
 <template>
     <a-dropdown :trigger="['hover']" placement="bottomLeft">
         <div :class="['toolbar-btn', { active: activeKey !== null }]">
-            <Icon :name="activeIcon" size="16" />
-            <Icon name="ri:arrow-down-s-line" size="10" class="ml-1px" />
+            <component :is="activeIcon"></component>
+            <ArrowDownSLine class="ml-1px"></ArrowDownSLine>
         </div>
         <template #popupRender>
             <a-menu>
                 <a-menu-item v-for="item in items" :key="item.key" @click="item.action(editor)">
                     <div :class="['list-item', { active: activeKey === item.key }]">
-                        <Icon :name="item.icon" size="16" />
+                        <component :is="item.icon"></component>
                         <span>{{ item.label }}</span>
                     </div>
                 </a-menu-item>
