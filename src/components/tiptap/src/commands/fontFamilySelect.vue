@@ -24,8 +24,7 @@ const applyFont = (value: string | undefined) => {
     if (!props.editor) return
     if (!value) {
         props.editor.chain().focus().unsetFontFamily().run()
-    }
-    else {
+    } else {
         props.editor.chain().focus().setFontFamily(value).run()
     }
 }

@@ -98,6 +98,12 @@
     "vue-tsc": "^3.3.5"
   },
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "antdv-next",
+    "tiptap",
+    "editor"
+  ],
   "homepage": "https://pengyinghao.github.io/antdv-next-tiptap",
   "repository": {
     "type": "git",

@@ -18,9 +18,9 @@ export const boldPlugin: TiptapPlugin = {
         { divider: true },
         {
             icon: 'ri:bold',
-            title: '加粗',                   // 按钮提示文本
-            action: (editor) => editor.chain().focus().toggleBold().run(),    // 点击操作
-            isActive: (editor) => editor.isActive('bold')  // 判断当前是否激活状态
+            title: '加粗', // 按钮提示文本
+            action: (editor) => editor.chain().focus().toggleBold().run(), // 点击操作
+            isActive: (editor) => editor.isActive('bold') // 判断当前是否激活状态
         }
     ]
 }

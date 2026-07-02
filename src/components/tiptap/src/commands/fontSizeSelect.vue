@@ -19,8 +19,7 @@ const applySize = (value: string | undefined) => {
     if (!props.editor) return
     if (!value) {
         props.editor.chain().focus().unsetFontSize().run()
-    }
-    else {
+    } else {
         props.editor.chain().focus().setFontSize(value).run()
     }
 }

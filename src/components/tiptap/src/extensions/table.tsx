@@ -16,7 +16,7 @@ const TableRowWithHeight = TableRow.extend({
             height: {
                 default: null,
                 parseHTML: (el) => el.style.height || el.getAttribute('height') || null,
-                renderHTML: ({ height }) => height ? { style: `height: ${height}` } : {}
+                renderHTML: ({ height }) => (height ? { style: `height: ${height}` } : {})
             }
         }
     }

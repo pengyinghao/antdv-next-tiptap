@@ -52,7 +52,7 @@ const toggle = (level: (typeof items)[number]['level']) => {
 
 <style lang="scss" scoped>
 .toolbar-btn {
-    @apply cursor-pointer h-32px px-6px flex-center rounded-6px transition-base flex-shrink-0 gap-2px;
+    @apply ml-8px cursor-pointer h-32px px-6px flex-center rounded-6px transition-base flex-shrink-0 gap-2px;
     @apply text-text hover:bg-ant-primary-bg hover:text-primary;
 
     &.active {
